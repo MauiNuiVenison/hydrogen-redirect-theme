@@ -134,6 +134,61 @@
         }
       }
     </style>
+    <script>
+      (function() {
+    // Function to update the button's URL
+    function updateButtonURL(button) {
+        const onclickAttr = button.getAttribute('onclick');
+        if (onclickAttr && onclickAttr.includes('https://mauinuivenison.com')) {
+            // Replace the old domain with the new one
+            const updatedOnclick = onclickAttr.replace(
+                'https://mauinuivenison.com',
+                'https://checkout.mauinuivenison.com'
+            );
+            button.setAttribute('onclick', updatedOnclick);
+            console.log('Button URL updated to checkout.mauinuivenison.com');
+        }
+    }
+
+    // Function to handle mutations observed in the DOM
+    function handleMutations(mutationsList) {
+        for (const mutation of mutationsList) {
+            // Only process added nodes
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                mutation.addedNodes.forEach(node => {
+                    // Ensure the node is an element
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        // If the added node is the button, update it
+                        if (node.matches('button.qa-button')) {
+                            updateButtonURL(node);
+                        }
+                        // Also check if the button is within the subtree of the added node
+                        node.querySelectorAll && node.querySelectorAll('button.qa-button').forEach(updateButtonURL);
+                    }
+                });
+            }
+        }
+    }
+
+    // Initial check in case the button is already present
+    function initialButtonCheck() {
+        const buttons = document.querySelectorAll('button.qa-button');
+        buttons.forEach(updateButtonURL);
+    }
+
+    // Set up the MutationObserver to watch for changes in the DOM
+    function setupMutationObserver() {
+        const observer = new MutationObserver(handleMutations);
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // Initialize the script after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initialButtonCheck();      // Check existing buttons
+        setupMutationObserver();   // Start observing for new buttons
+    });
+})();
+    </script>
   </head>
   <body>
     {%- if should_redirect -%}
