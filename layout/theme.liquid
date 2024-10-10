@@ -136,9 +136,8 @@
     </style>
     <script>
       (function() {
-    // Function to update the button's URL and text
-    function updateButton(button) {
-        // Update the button's URL
+    // Function to update the button's URL
+    function updateButtonURL(button) {
         const onclickAttr = button.getAttribute('onclick');
         if (onclickAttr && onclickAttr.includes('https://mauinuivenison.com')) {
             // Replace the old domain with the new one
@@ -149,12 +148,8 @@
             button.setAttribute('onclick', updatedOnclick);
             console.log('Button URL updated to checkout.mauinuivenison.com');
         }
-    
-        // Update the button's text
-        button.textContent = 'Choose You Flavors';
-        console.log('Button text updated to "choose your flavors"');
     }
-    
+
     // Function to handle mutations observed in the DOM
     function handleMutations(mutationsList) {
         for (const mutation of mutationsList) {
@@ -165,10 +160,10 @@
                     if (node.nodeType === Node.ELEMENT_NODE) {
                         // If the added node is the button, update it
                         if (node.matches('button.qa-button')) {
-                            updateButton(node);
+                            updateButtonURL(node);
                         }
                         // Also check if the button is within the subtree of the added node
-                        node.querySelectorAll && node.querySelectorAll('button.qa-button').forEach(updateButton);
+                        node.querySelectorAll && node.querySelectorAll('button.qa-button').forEach(updateButtonURL);
                     }
                 });
             }
