@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <meta name="robots" content="noindex">
+
+    {% if request.page_type = 'product' %}
+      <link rel="canonical" href="https://mauinuivenison.com/products/{{ product.handle }}" />
+    {% else %}
+      <link rel="canonical" href="https://mauinuivenison.com/{{ request.path }}" />
+    {% endif %}
+    
     <title>
       {{ page_title }}
     </title>
