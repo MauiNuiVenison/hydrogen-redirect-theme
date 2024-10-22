@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <meta name="robots" content="noindex">
 
-    {% if request.page_type = 'product' %}
+    {% if request.page_type == 'product' %}
       <link rel="canonical" href="https://mauinuivenison.com/products/{{ product.handle }}" />
     {% else %}
       <link rel="canonical" href="https://mauinuivenison.com/{{ request.path }}" />
