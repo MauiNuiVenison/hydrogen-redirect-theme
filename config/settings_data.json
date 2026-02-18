@@ -12,11 +12,6 @@
     "storefront_hostname": "mauinuivenison.com",
     "content_for_index": [],
     "blocks": {
-      "15685250022964305326": {
-        "type": "shopify://apps/elevar-conversion-tracking/blocks/dataLayerEmbed/bc30ab68-b15c-4311-811f-8ef485877ad6",
-        "disabled": false,
-        "settings": {}
-      },
       "3576686563519644491": {
         "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
         "disabled": false,
@@ -24,10 +19,13 @@
           "vwoAccountId": "1142753",
           "codeType": "ASYNC",
           "settingsTolerance": 2000,
-          "libraryTolerance": 2500,
-          "existingJquery": "false",
           "enableThemeTesting": false
         }
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
