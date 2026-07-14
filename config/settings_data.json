@@ -16,10 +16,10 @@
         "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
         "disabled": false,
         "settings": {
+          "enableThemeTesting": false,
           "vwoAccountId": "1142753",
           "codeType": "ASYNC",
-          "settingsTolerance": 2000,
-          "enableThemeTesting": false
+          "settingsTolerance": 2000
         }
       },
       "855628211100114053": {
@@ -33,6 +33,11 @@
         "settings": {
           "debug_mode": false
         }
+      },
+      "11559974461947370708": {
+        "type": "shopify://apps/p6357bc77-opensend/blocks/opensend/019f60da-fbcd-7fb1-8e14-17612b32c77c",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
