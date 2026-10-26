@@ -38,6 +38,11 @@
         "type": "shopify://apps/p6357bc77-opensend/blocks/opensend/019f60da-fbcd-7fb1-8e14-17612b32c77c",
         "disabled": false,
         "settings": {}
+      },
+      "7696669371746487001": {
+        "type": "shopify://apps/aspire-affiliates-app/blocks/aspire-link-tracking-embed/3a7fa3c9-48ed-4369-ae6c-fa9449091e80",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
